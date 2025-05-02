@@ -1,0 +1,72 @@
+/* Custom styles for La Oca game */
+
+#board div {
+  aspect-ratio: 1 / 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 1.25rem;
+  border-radius: 0.375rem; /* rounded-md */
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+#board div.player-position {
+  /* For multiple players, background color will be handled by tokens */
+  background-color: white;
+  color: black;
+}
+
+#board div.special-square {
+  background-color: #fbbf24; /* yellow-400 */
+  color: #92400e; /* yellow-900 */
+  font-weight: 900;
+}
+
+#board div:hover {
+  background-color: #bfdbfe; /* blue-200 */
+}
+
+#question-container button {
+  @apply bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded shadow transition duration-300;
+}
+
+#question-container button:hover {
+  background-color: #2563eb; /* blue-700 */
+}
+
+/* Player tokens styles */
+.player-token {
+  width: 20px;
+  height: 20px;
+  border-radius: 9999px; /* full */
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  border: 2px solid white;
+  box-shadow: 0 0 3px rgba(0,0,0,0.5);
+  z-index: 10;
+}
+
+/* Different colors for tokens */
+.token-0 { background-color: #ef4444; } /* red-500 */
+.token-1 { background-color: #3b82f6; } /* blue-500 */
+.token-2 { background-color: #10b981; } /* green-500 */
+.token-3 { background-color: #f59e0b; } /* yellow-500 */
+
+/* Images on board squares */
+.board-image {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  pointer-events: none;
+  opacity: 0.8;
+  border-radius: 0.25rem;
+}
